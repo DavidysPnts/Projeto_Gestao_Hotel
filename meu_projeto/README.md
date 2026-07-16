@@ -1,6 +1,6 @@
 # Sistema de Hotel
 
-**Nome:** Davidys Cavalcante de Pontes
+**Nome:** Davidys Cavalcante de Pontes  
 **Matrícula:** 20250019035
 
 ## Descrição
@@ -13,12 +13,12 @@ Este projeto se resume a um sistema de gerenciamento de hotel. O hotel possui qu
 classDiagram
     class Hotel {
         -string name_
-        -vector~Room*~ rooms_
-        -vector~Guest*~ guests_
+        -vector~shared_ptr~Room~~ rooms_
+        -vector~shared_ptr~Guest~~ guests_
         +Hotel(string)
         +~Hotel()
-        +add_room(Room*) void
-        +add_guest(Guest*) void
+        +add_room(shared_ptr~Room~) void
+        +add_guest(shared_ptr~Guest~) void
         +display_status() void
     }
 
@@ -45,11 +45,11 @@ classDiagram
 
     class Reservation {
         -int id_
-        -Guest* guest_
-        -Room* room_
+        -Guest& guest_
+        -Room& room_
         -int nights_
         -vector~ConsumptionProduct~ products_
-        +Reservation(int, Guest*, Room*, int)
+        +Reservation(int, Guest&, Room&, int)
         +~Reservation()
         +add_product(ConsumptionProduct) void
         +calculate_total() float
@@ -70,4 +70,19 @@ classDiagram
     Reservation "1" *-- "0..*" ConsumptionProduct : contém
     Reservation --> Guest : referencia
     Reservation --> Room : referencia
+```
+
+## Smart Pointers
+
+- `shared_ptr<Room>` no Hotel: quarto é agregado — pode ser compartilhado e existe independentemente do hotel.
+- `shared_ptr<Guest>` no Hotel: hóspede é agregado — pode ser compartilhado e existe independentemente do hotel.
+- `Guest&` e `Room&` na Reservation: a reserva apenas referencia o hóspede e o quarto, sem posse — referência é suficiente.
+- `vector<ConsumptionProduct>` na Reservation: composição por valor — os produtos pertencem à reserva e são destruídos com ela, sem necessidade de ponteiro.
+
+## Como Compilar e Executar
+
+```bash
+cmake -B build
+cmake --build build
+./build/hotel_system
 ```
