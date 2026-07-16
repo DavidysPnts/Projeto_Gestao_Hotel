@@ -1,3 +1,0 @@
-/home/davidys/Documentos/Projeto_Gestao_Hotel/Projeto_Gestao_Hotel/meu_projeto/build/CMakeFiles/hotel_system.dir
-/home/davidys/Documentos/Projeto_Gestao_Hotel/Projeto_Gestao_Hotel/meu_projeto/build/CMakeFiles/edit_cache.dir
-/home/davidys/Documentos/Projeto_Gestao_Hotel/Projeto_Gestao_Hotel/meu_projeto/build/CMakeFiles/rebuild_cache.dir

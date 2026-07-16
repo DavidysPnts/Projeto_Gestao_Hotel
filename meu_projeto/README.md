@@ -26,7 +26,7 @@ classDiagram
         <<interface>>
         +calculate_price(int nights) float*
         +display_price(int nights) void*
-        +~ICalculate()
+        +~ICalculable()
     }
 
     class Room {
