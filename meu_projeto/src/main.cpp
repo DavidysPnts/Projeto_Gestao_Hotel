@@ -3,6 +3,8 @@
 #include "hotel.hpp"
 #include "guest.hpp"
 #include "room.hpp"
+#include "standard_room.hpp"
+#include "suite_room.hpp"
 #include "reservation.hpp"
 #include "consumption_product.hpp"
 
@@ -11,8 +13,8 @@ int main() {
     Hotel hotel("Palace Hotel");
 
     // Criando quartos
-    auto room1 = std::make_shared<Room>(101, 150.0);
-    auto room2 = std::make_shared<Room>(102, 200.0);
+    auto room1 = std::make_shared<StandardRoom>(101, 150.0);
+    auto room2 = std::make_shared<SuiteRoom>(102, 200.0, 50.0);
 
     // Criando hóspedes
     auto guest1 = std::make_shared<Guest>("Davidys Pontes", "123.456.789-00");
@@ -27,7 +29,6 @@ int main() {
     hotel.display_status();
     std::cout << "\n";
 
-    // ---- Demonstração de composição ----
     // Reservation é dona dos ConsumptionProducts
     // Ao sair do bloco, a reserva é destruída junto com seus produtos
     std::cout << "---- Demonstracao de Composicao ----\n";
@@ -40,13 +41,20 @@ int main() {
     }
     std::cout << "[fora do bloco]\n\n";
 
-    // --- Demonstração de agregação ---
     // Room e Guest existem independentemente da Reservation
     std::cout << "---- Demonstracao de Agregacao ----\n";
     std::cout << "Quarto e hospede ainda existem apos destruicao da reserva:\n";
     room1->display_info();
     guest1->display_info();
-
     std::cout << "\n";
+
+    std::cout << "---- Demonstracao de Destrutor Virtual ----\n";
+    {
+        Room* room = new SuiteRoom(201, 400.0, 80.0);
+        room->display_info();
+        delete room; // vai chamar ~SuiteRoom antes de ~Room
+    }
+    std::cout << "\n";
+
     return 0;
 }
