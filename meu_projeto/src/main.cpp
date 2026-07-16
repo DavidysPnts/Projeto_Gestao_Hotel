@@ -90,5 +90,11 @@ int main() {
     }
     std::cout << "[fora do bloco]\n\n";
 
+    std::cout << "--- Demonstração de Interface Pura ---\n";
+    StandardRoom room_iface(401, 200.0);
+    const ICalculable& calc = room_iface;
+    calc.display_price(3);
+    std::cout << "\n";
+
     return 0;
 }
