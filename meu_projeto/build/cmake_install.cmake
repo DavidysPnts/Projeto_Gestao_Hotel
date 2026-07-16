@@ -1,4 +1,4 @@
-# Install script for directory: /home/davidys/Documentos/Trabalho-Pr-tico-1/meu_projeto
+# Install script for directory: /home/davidys/Documentos/Projeto_Gestao_Hotel/Projeto_Gestao_Hotel/meu_projeto
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/davidys/Documentos/Trabalho-Pr-tico-1/meu_projeto/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/davidys/Documentos/Projeto_Gestao_Hotel/Projeto_Gestao_Hotel/meu_projeto/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

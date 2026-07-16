@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/davidys/Documentos/Trabalho-Pr-tico-1/meu_projeto/src/main.cpp" "CMakeFiles/hotel_system.dir/src/main.cpp.o" "gcc" "CMakeFiles/hotel_system.dir/src/main.cpp.o.d"
+  "/home/davidys/Documentos/Projeto_Gestao_Hotel/Projeto_Gestao_Hotel/meu_projeto/src/main.cpp" "CMakeFiles/hotel_system.dir/src/main.cpp.o" "gcc" "CMakeFiles/hotel_system.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

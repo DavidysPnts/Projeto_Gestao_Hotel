@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/davidys/Documentos/Trabalho-Pr-tico-1/meu_projeto/src
+CXX_INCLUDES = -I/home/davidys/Documentos/Projeto_Gestao_Hotel/Projeto_Gestao_Hotel/meu_projeto/src
 
 CXX_FLAGS = -std=gnu++17 -Wall -Wextra
 
