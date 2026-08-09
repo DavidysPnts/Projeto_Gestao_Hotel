@@ -9,7 +9,7 @@ add_compile_options(-Wall -Wextra)
 
 include(FetchContent)
 
-# nlohmann/json — usado na serialização (TP3 Q4)
+# nlohmann/json — usado na serialização
 FetchContent_Declare(
     json
     GIT_REPOSITORY https://github.com/nlohmann/json.git
@@ -24,7 +24,7 @@ add_executable(hotel_system ${SOURCES})
 target_include_directories(hotel_system PRIVATE src)
 target_link_libraries(hotel_system PRIVATE nlohmann_json::nlohmann_json)
 
-# Catch2 pra testes (TP2 Q4 / TP3 Q5 - extra)
+# Catch2 pra testes
 FetchContent_Declare(
     Catch2
     GIT_REPOSITORY https://github.com/catchorg/Catch2.git
@@ -40,7 +40,7 @@ include(CTest)
 include(Catch)
 catch_discover_tests(testes)
 
-# GUI Qt (TP3 Q6 - extra). Só é compilada se o Qt6 estiver instalado no sistema;
+# Só é compilada se o Qt6 estiver instalado
 # caso contrário, o build principal segue normalmente sem a GUI.
 find_package(Qt6 QUIET COMPONENTS Widgets)
 if(Qt6_FOUND)

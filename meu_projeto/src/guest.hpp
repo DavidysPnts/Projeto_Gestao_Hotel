@@ -3,9 +3,10 @@
 
 #include <string>
 #include <iostream>
+#include "counted.hpp"
 
 // Representa um hóspede do hotel
-class Guest {
+class Guest : public Counted<Guest> {
 private:
     std::string name_;
     std::string cpf_;

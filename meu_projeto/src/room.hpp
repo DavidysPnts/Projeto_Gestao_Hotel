@@ -2,9 +2,10 @@
 #define ROOM_HPP
 
 #include <iostream>
+#include "counted.hpp"
 
 // Classe base abstrata que representa um quarto do hotel
-class Room {
+class Room : public Counted<Room> {
 protected:
     int number_;
     float price_per_night_;
