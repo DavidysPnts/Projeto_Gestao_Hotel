@@ -23,6 +23,9 @@ public:
         return (price_per_night_ * nights) + service_fee_;
     }
 
+    // Getter const - necessário para serialização
+    float get_service_fee() const { return service_fee_;}
+
     // Sobrescreve display_info chamando a versão da base primeiro
     void display_info() const override {
         Room::display_info();
